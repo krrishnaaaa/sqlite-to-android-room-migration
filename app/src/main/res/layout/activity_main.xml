@@ -14,7 +14,7 @@
         android:id="@+id/et_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter name"
+        android:hint="@string/hint_name"
         android:inputType="textPersonName"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -25,20 +25,66 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:hint="Enter mobile number"
+        android:hint="@string/hint_contact"
         android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_name" />
 
     <Button
-        android:id="@+id/btn_save"
+        android:id="@+id/btn_insert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Save"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/insert"
+        app:layout_constraintEnd_toStartOf="@id/btn_update"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_contact" />
 
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/update"
+        app:layout_constraintEnd_toStartOf="@id/btn_delete"
+        app:layout_constraintStart_toEndOf="@id/btn_insert"
+        app:layout_constraintTop_toBottomOf="@id/et_contact" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/delete"
+        app:layout_constraintEnd_toStartOf="@id/btn_select"
+        app:layout_constraintStart_toEndOf="@id/btn_update"
+        app:layout_constraintTop_toBottomOf="@id/et_contact" />
+
+    <Button
+        android:id="@+id/btn_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/select"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_delete"
+        app:layout_constraintTop_toBottomOf="@id/et_contact" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_select">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#101010"
+            android:textSize="16sp" />
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
