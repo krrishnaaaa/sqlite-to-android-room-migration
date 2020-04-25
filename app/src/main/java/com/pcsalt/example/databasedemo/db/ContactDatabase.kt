@@ -4,9 +4,12 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.pcsalt.example.databasedemo.db.converter.Converters
 import com.pcsalt.example.databasedemo.db.dao.ContactDao
 import com.pcsalt.example.databasedemo.db.entity.Contact
 
+@TypeConverters(Converters::class)
 @Database(entities = [Contact::class], version = 1)
 abstract class ContactDatabase : RoomDatabase() {
     abstract fun getContactDao(): ContactDao
