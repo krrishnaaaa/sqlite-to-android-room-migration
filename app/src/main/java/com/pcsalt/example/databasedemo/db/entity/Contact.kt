@@ -8,7 +8,7 @@ import java.util.*
 @Entity(tableName = "tblContact")
 data class Contact(
     @PrimaryKey
-    @ColumnInfo(name = "id")
+    @ColumnInfo(name = "_id")
     var id: Long?,
     @ColumnInfo(name = "name")
     var name: String?,

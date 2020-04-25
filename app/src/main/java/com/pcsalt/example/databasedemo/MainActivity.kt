@@ -75,8 +75,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun select() {
         contactViewModel.getAll().observe(this, Observer {
+            tv_content.text = ""
             for (contact in it) {
-                tv_content.append("[id: ${contact.id}]\t[name: ${contact.name}]\t${contact.contact}]\t$[date: ${contact.createdOn}]")
+                tv_content.append("[id: ${contact.id}]\t[name: ${contact.name}]\t[contact: ${contact.contact}]\t[date: ${contact.createdOn}]")
                 tv_content.append("\n\n")
             }
         })
