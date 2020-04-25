@@ -8,9 +8,10 @@ import androidx.room.TypeConverters
 import com.pcsalt.example.databasedemo.db.converter.Converters
 import com.pcsalt.example.databasedemo.db.dao.ContactDao
 import com.pcsalt.example.databasedemo.db.entity.Contact
+import com.pcsalt.example.databasedemo.db.migration.MigrationV1
 
 @TypeConverters(Converters::class)
-@Database(entities = [Contact::class], version = 1)
+@Database(entities = [Contact::class], version = 2)
 abstract class ContactDatabase : RoomDatabase() {
     abstract fun getContactDao(): ContactDao
 
@@ -29,6 +30,7 @@ abstract class ContactDatabase : RoomDatabase() {
                     ContactDatabase::class.java,
                     "dbname.db"
                 )
+                    .addMigrations(MigrationV1())
                     .build()
                 INSTANCE = instance
                 return instance
