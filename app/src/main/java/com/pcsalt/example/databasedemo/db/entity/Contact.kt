@@ -15,6 +15,6 @@ data class Contact(
     @ColumnInfo(name = "contact")
     var contact: String?,
     @ColumnInfo(name = "created_on")
-    var createdOn: Date?
+    var createdOn: Long?
 ) {
 }

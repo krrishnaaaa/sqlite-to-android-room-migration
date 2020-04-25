@@ -61,7 +61,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun insert() {
-        val contact = Contact(null, getName(), getContact(), Date())
+        val contact = Contact(null, getName(), getContact(), Date().time)
         contactViewModel.insert(contact)
     }
 
