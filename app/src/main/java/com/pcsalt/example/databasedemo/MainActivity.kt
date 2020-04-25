@@ -101,10 +101,12 @@ class MainActivity : AppCompatActivity() {
         var id: Int
         var name: String
         var contact: String
+        var date: String
         val columns = arrayOf(
             DBConsts.ID,
             DBConsts.NAME,
-            DBConsts.CONTACT
+            DBConsts.CONTACT,
+            DBConsts.CREATED_ON
         )
         val selection: String? = null // no selection
         val selectionArgs: Array<String>? = null // not needed
@@ -115,7 +117,8 @@ class MainActivity : AppCompatActivity() {
                 id = cur.getInt(cur.getColumnIndex(DBConsts.ID))
                 name = cur.getString(cur.getColumnIndex(DBConsts.NAME))
                 contact = cur.getString(cur.getColumnIndex(DBConsts.CONTACT))
-                result.append("[id: $id]\t[name: $name]\t[contact: $contact]\n")
+                date = cur.getString(cur.getColumnIndex(DBConsts.CREATED_ON))
+                result.append("[id: $id]\t[name: $name]\t[contact: $contact]\t[date: $date]\n\n")
             }
         } else {
             result.append("No result found")
